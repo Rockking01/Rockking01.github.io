@@ -54,7 +54,7 @@ function Signup() {
       </div>
       <div className="login-section">
         <h1>Registrarse</h1>
-        <form className="login-form">
+        <div className="login-form">
           <label className="label-login" for="name">
             Ingresa tu nombre
           </label>
@@ -97,7 +97,7 @@ function Signup() {
           <CustomLink to="/home">
             <button className="max-btn">Registrarse</button>
           </CustomLink>
-        </form>
+        </div>
       </div>
     </div>
   );
