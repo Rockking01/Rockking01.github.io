@@ -78,3 +78,18 @@ button:hover {
     height: 10%;
     margin-bottom: 5rem;
 }
+
+@media (max-width: 600px) {
+    button {
+        font-size: 1.5rem;
+    }
+    .img-logo {
+        width: 50%;
+        height: 25%;
+    }
+    h1 {
+        font-size: 3rem;
+        margin: 0 2rem;
+        text-align: center;
+    }
+}
