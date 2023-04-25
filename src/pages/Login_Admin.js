@@ -5,62 +5,6 @@ import React, { useState } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 
-/*<div className=" container">
-  <h1>Login</h1>
-  <Input name=" email" onChangeValue={onChangeValue} label="Email" />
-  <Input
-    name=" password"
-    type={"password"}
-    onChangeValue={onChangeValue}
-    label="Password"
-  />
-  <div className=" text-danger">{msg}</div>
-  <Button onClick={onSubmit} type="primary">
-    Login
-  </Button>
-</div>;*/
-
-function Login() {
-  return (
-    <div className="login-container">
-      <div className="signup-section">
-        <h2>Bienvenido</h2>
-        <p className="text">Si aun no tienes una cuenta registrate</p>
-        <CustomLink to="/signup">
-          <button className="max-btn">Registrarse</button>
-        </CustomLink>
-      </div>
-      <div className="login-section">
-        <h1>Iniciar Sesion</h1>
-        <form className="login-form">
-          <label className="label-login" for="email">
-            Ingresa tu correo electronico
-          </label>
-          <input
-            className="max-btn margin-some"
-            type="text"
-            name="email"
-            id="email"
-            placeholder="regalrexnord@regalrexnord.com"
-          />
-          <label className="label-login" for="password">
-            Ingresa tu correo contraseña
-          </label>
-          <input
-            className="max-btn"
-            type="password"
-            name="password"
-            id="password"
-          />
-          <CustomLink to="/home">
-            <button className="max-btn">Iniciar Sesion</button>
-          </CustomLink>
-        </form>
-      </div>
-    </div>
-  );
-}
-
 function CustomLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
@@ -73,7 +17,7 @@ function CustomLink({ to, children, ...props }) {
   );
 }
 
-function LoginView() {
+function Login_Admin() {
   const [msg, setMsg] = useState("");
   const [data, setData] = useState({});
 
@@ -88,7 +32,7 @@ function LoginView() {
       "users/login/",
       (response) => {
         localStorage.setItem("token", response.token);
-        window.location.href = "/home";
+        window.location.href = "/admin_page";
       },
       (response) => {
         console.log(response);
@@ -109,9 +53,9 @@ function LoginView() {
         <CustomLink to="/signup">
           <button className="max-btn">Registrarse</button>
         </CustomLink>
-        <p className="text">Iniciar sesion para administrador</p>
-        <CustomLink to="/login_admin">
-          <button className="btn-admin max-btn">Inicio Administrador</button>
+        <p className="text">Usuario General</p>
+        <CustomLink to="/login">
+          <button className="btn-admin max-btn">Inicio General</button>
         </CustomLink>
       </div>
       <div className="login-section">
@@ -138,4 +82,4 @@ function LoginView() {
     </div>
   );
 }
-export default LoginView;
+export default Login_Admin;
