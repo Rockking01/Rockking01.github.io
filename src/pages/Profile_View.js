@@ -13,7 +13,7 @@ function Profile_View() {
   useEffect(() => {
     setIsLoading(true);
     API.call(
-      `users/${id}`,
+      `users/${id}/`,
       (response) => {
         setData(response);
         setIsLoading(false);

@@ -10,11 +10,20 @@ class API {
       headers["Authorization"] = `Token ${localStorage.getItem("token")}`;
     }
 
-    fetch(`${baseUrl}/${route}`, {
+    let url = `${baseUrl}/${route}`;
+    if (params && params.id) {
+      url = `${baseUrl}/${route}/${params.id}/`;
+      delete params.id;
+    }
+
+    console.log(`Haciendo llamada a la API: ${url}`);
+
+    fetch(url, {
       ...params,
       headers: { ...headers },
     })
       .then(function (response) {
+        console.log(`Respuesta de la API recibida. Código: ${response.status}`);
         if (response.ok) {
           return response.json();
         } else {
@@ -24,9 +33,14 @@ class API {
       })
       .then(function (jsonResponse) {
         if (jsonResponse) {
-          console.log("respuesta recibida...");
+          console.log("Respuesta JSON recibida:");
+          console.log(jsonResponse);
           onSuccess(jsonResponse);
         }
+      })
+      .catch(function (error) {
+        console.log("Error en la llamada a la API:");
+        console.error(error);
       });
   };
 }
