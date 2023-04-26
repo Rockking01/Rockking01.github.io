@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import API from "../utils/API";
 import Table from "../components/Table";
 import Spinner from "../components/Spinner";
-import Button from "../components/Button";
 
-function Admin_Page() {
-  const [data, setData] = useState([]);
+function Profile_View() {
+  const { id } = useParams();
+  const [data, setData] = useState({});
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchData = () => {
+  useEffect(() => {
     setIsLoading(true);
     API.call(
-      "users/",
+      `users/${id}`,
       (response) => {
         setData(response);
         setIsLoading(false);
@@ -22,23 +23,13 @@ function Admin_Page() {
         setIsLoading(false);
       }
     );
-  };
+  }, [id]);
 
-  const headers = [
-    "Id",
-    "First_Name",
-    "Total_Score",
-    "Average_Score",
-    "Actions"
-  ];
-
-  const handleRowClick = (id) => {
-    console.log(`Clicked row with id ${id}`);
-  };
+  const headers = ["Id", "First_Name", "Last_Name", "Total_Score", "Average_Score"];
 
   return (
     <>
-      <h1>Admin Page</h1>
+      <h1>Profile View</h1>
 
       {isLoading ? (
         <Spinner />
@@ -48,12 +39,8 @@ function Admin_Page() {
             <p>{error}</p>
           ) : (
             <>
-              {data.length > 0 ? (
-                <Table
-                  headers={headers}
-                  data={data}
-                  onRowClick={handleRowClick}
-                />
+              {Object.keys(data).length > 0 ? (
+                <Table headers={headers} data={[data]} />
               ) : (
                 <p>No data available</p>
               )}
@@ -61,10 +48,8 @@ function Admin_Page() {
           )}
         </>
       )}
-
-      <Button onClick={fetchData}>Load data</Button>
     </>
   );
 }
 
-export default Admin_Page;
+export default Profile_View;

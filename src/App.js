@@ -5,6 +5,7 @@ import Landing from './Landing';
 import Home from './pages/Home';
 import Admin_Page from './pages/Admin_Page';
 import Login_Admin from './pages/Login_Admin';
+import Profile_View from './pages/Profile_View';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/admin_page" element={<Admin_Page />} />
         <Route path="/login_admin" element={<Login_Admin />} />
+        <Route path="/profile_view/:userId" element={<Profile_View />} />
         <Route path="/" element={
             <>
               <Landing />

@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Table = ({ headers, data }) => {
+const Table = ({ headers, data, onRowClick }) => {
   return (
     <table>
       <thead>
@@ -12,10 +13,16 @@ const Table = ({ headers, data }) => {
       </thead>
       <tbody>
         {data.map((row, index) => (
-          <tr key={index}>
+          <tr key={index} onClick={() => onRowClick(row.id)}>
             {headers.map((header) => (
               <td key={`${index}-${header}`}>
-                {row[header.toLowerCase()]}
+                {header.toLowerCase() === "id" ? (
+                  <Link to={`/profile_view/${row.id}`}>
+                    {row[header.toLowerCase()]}
+                  </Link>
+                ) : (
+                  row[header.toLowerCase()]
+                )}
               </td>
             ))}
           </tr>
