@@ -42,7 +42,7 @@ function Profile_View() {
               {Object.keys(data).length > 0 ? (
                 <Table headers={headers} data={[data]} />
               ) : (
-                <p>No data available</p>
+                <p>No hay datos que mostrar</p>
               )}
             </>
           )}
