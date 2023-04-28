@@ -16,7 +16,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/admin_page" element={<Admin_Page />} />
         <Route path="/login_admin" element={<Login_Admin />} />
-        <Route path="/profile_view/:userId" element={<Profile_View />} />
+        <Route path="/profile_view/:id" element={<Profile_View />} />
         <Route path="/" element={
             <>
               <Landing />

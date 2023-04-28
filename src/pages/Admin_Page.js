@@ -3,6 +3,7 @@ import API from "../utils/API";
 import Table from "../components/Table";
 import Spinner from "../components/Spinner";
 import Button from "../components/Button";
+import './admin_styles.css'
 
 function Admin_Page() {
   const [data, setData] = useState([]);
@@ -47,7 +48,14 @@ function Admin_Page() {
           {error ? (
             <p>{error}</p>
           ) : (
-            <>
+            <div className="grid-admin">
+              <div className="profile">
+                <p>profile</p>
+              </div>
+              <div className="chart">
+                <p>chart</p>
+              </div>
+              <div className="table">
               {data.length > 0 ? (
                 <Table
                   headers={headers}
@@ -57,7 +65,8 @@ function Admin_Page() {
               ) : (
                 <p>No data available</p>
               )}
-            </>
+              </div>
+            </div>
           )}
         </>
       )}
