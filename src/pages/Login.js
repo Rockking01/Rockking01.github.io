@@ -88,7 +88,20 @@ function LoginView() {
       "users/login/",
       (response) => {
         localStorage.setItem("token", response.token);
-        window.location.href = "/home";
+        API.call(
+          "users/current_user/",
+          (response) => {
+            if (response.role) {
+              window.location.href = "/admin_page";
+            } else {
+              window.location.href = "/profile";
+            }
+          },
+          (response) => {
+            console.log(response);
+            setMsg(response.error);
+          }
+        );
       },
       (response) => {
         console.log(response);
@@ -109,9 +122,9 @@ function LoginView() {
         <CustomLink to="/signup">
           <button className="max-btn">Registrarse</button>
         </CustomLink>
-        <p className="text">Iniciar sesion para administrador</p>
+        <p className="text">administrador</p>
         <CustomLink to="/login_admin">
-          <button className="btn-admin max-btn">Inicio Administrador</button>
+          <button className="btn-admin max-btn">Inicio Admin</button>
         </CustomLink>
       </div>
       <div className="login-section">
