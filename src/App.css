@@ -1,6 +1,6 @@
 :root {
-    --main-color: #ded6cb;
-    --main-text: #837D74;
+    --main-color: #43403D;
+    --main-text: #fff;
     --black: #000;
     --black-degradation: rgba(0, 0, 0, 0.424);
     --white: #FFF
@@ -14,11 +14,14 @@ html {
     box-sizing: inherit;
 }
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     color: var(--main-text);
     background-color: var(--main-color);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
 
 /* * {
     border: 1px solid red;
@@ -70,7 +73,7 @@ button {
 
 button:hover {
     background-color: var(--white);
-    color: var(--black-degradation);
+    color: rgb(0, 0, 0);
 }
 
 .img-logo {

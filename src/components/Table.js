@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Table_Styles.css'
 
 const Table = ({ headers, data, onRowClick }) => {
   return (
-    <table>
+    <table className="table">
       <thead>
         <tr>
           {headers.map((header) => (

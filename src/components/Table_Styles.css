@@ -1,0 +1,31 @@
+.table tr:nth-child(even) {
+  background-color: #8a8a8a;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #8E936D;
+}
+
+.table td, 
+.table th {
+  border: none;
+  padding: 8px;
+  text-align: center;
+}
+
+.table tr:hover {
+  background-color: rgba(0, 0, 0, 0.424);
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #353535;
+  color: white;
+}
+
+.table {
+  width: 100%;
+  overflow: auto;
+  height: 45vh;
+}
