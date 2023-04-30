@@ -25,7 +25,16 @@ function Profile_View() {
     );
   }, [id]);
 
-  const headers = ["Id", "First_Name", "Last_Name", "Total_Score", "Average_Score"];
+  const handleRowClick = (id) => {
+    console.log(`Clicked row with id ${id}`);
+  };
+  const headers = [
+    "Id",
+    "first_name",
+    "last_name",
+    "total_score",
+    "average_score",
+  ];
 
   return (
     <>
@@ -40,7 +49,11 @@ function Profile_View() {
           ) : (
             <>
               {Object.keys(data).length > 0 ? (
-                <Table headers={headers} data={[data]} />
+                <Table
+                  headers={headers}
+                  onRowClick={handleRowClick}
+                  data={[data]}
+                />
               ) : (
                 <p>No hay datos que mostrar</p>
               )}

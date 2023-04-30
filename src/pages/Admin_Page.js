@@ -3,7 +3,7 @@ import API from "../utils/API";
 import Table from "../components/Table";
 import Spinner from "../components/Spinner";
 import Button from "../components/Button";
-import './admin_styles.css'
+import "./admin_styles.css";
 
 function Admin_Page() {
   const [data, setData] = useState([]);
@@ -28,9 +28,10 @@ function Admin_Page() {
   const headers = [
     "Id",
     "First_Name",
+    "Last_Name",
     "Total_Score",
     "Average_Score",
-    "Actions"
+    "Actions",
   ];
 
   const handleRowClick = (id) => {
@@ -65,7 +66,7 @@ function Admin_Page() {
                 ) : (
                   <p>Presiona el boton para mostrar los datos</p>
                 )}
-                <div className='center-btn'>
+                <div className="center-btn">
                   <Button onClick={fetchData}>Load data</Button>
                 </div>
               </div>
