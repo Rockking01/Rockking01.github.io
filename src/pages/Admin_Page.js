@@ -56,22 +56,23 @@ function Admin_Page() {
                 <p>chart</p>
               </div>
               <div className="table">
-              {data.length > 0 ? (
-                <Table
-                  headers={headers}
-                  data={data}
-                  onRowClick={handleRowClick}
-                />
-              ) : (
-                <p>No data available</p>
-              )}
+                {data.length > 0 ? (
+                  <Table
+                    headers={headers}
+                    data={data}
+                    onRowClick={handleRowClick}
+                  />
+                ) : (
+                  <p>Presiona el boton para mostrar los datos</p>
+                )}
+                <div className='center-btn'>
+                  <Button onClick={fetchData}>Load data</Button>
+                </div>
               </div>
             </div>
           )}
         </>
       )}
-
-      <Button onClick={fetchData}>Load data</Button>
     </>
   );
 }
