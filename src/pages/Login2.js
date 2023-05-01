@@ -65,12 +65,13 @@ function LoginView() {
           <Input
             name="email"
             onChangeValue={onChangeValue}
+            placeholder="jorge@tec.mx"
             label="Email"
-            labelClassName="label-login"
           />
           <Input
             name="password"
-            type={"password"}
+            type="password"
+            placeholder="********"
             onChangeValue={onChangeValue}
             label="Password"
           />

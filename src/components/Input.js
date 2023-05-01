@@ -14,12 +14,14 @@ function Input(props) {
   return (
     <div className="row">
       <div className="col">
-        <label className={props.labelClassName}> {props.label}</label>
+        <label className="label-login"> {props.label}</label>
       </div>
 
       <div className="col">
         <input
-          className="form-control"
+          className="max-btn"
+          type={props.type || "text"}
+          placeholder={props.placeholder || ""}
           onChange={(e) => {
             setValue(e.target.value);
           }}

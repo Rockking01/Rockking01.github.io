@@ -31,7 +31,7 @@ function SignUpView() {
   const loadData = () => {
     setLoading(true);
     API.call(
-      "users/",
+      "users/create",
       (response) => {
         console.log(response);
         setUserList(response);
@@ -66,7 +66,17 @@ function Signup() {
             type="text"
             name="name"
             id="name"
-            placeholder="Jose Perez"
+            placeholder="Jose"
+          />
+          <label className="label-login" for="name">
+            Ingresa tus apellidos
+          </label>
+          <input
+            className="max-btn margin-some"
+            type="text"
+            name="name"
+            id="apellido"
+            placeholder="perez"
           />
           <label className="label-login" for="email">
             Ingresa tu correo electronico
@@ -78,8 +88,27 @@ function Signup() {
             id="email"
             placeholder="regalrexnord@regalrexnord.com"
           />
+
+          <label className="label-login" for="password">
+            Ingresa tu contraseña
+          </label>
+          <input
+            className="max-btn"
+            type="password"
+            name="password"
+            id="password"
+          />
+          <label className="label-login" for="password">
+            Ingresa tu fecha de nacimiento
+          </label>
+          <input
+            className="max-btn"
+            type="date"
+            name="birthdate"
+            id="birthdate"
+          />
           <label className="label-login" for="id_empleado">
-            Ingresa tu numero de trabajador
+            Ingresa tu token de registro
           </label>
           <input
             className="max-btn margin-some"
@@ -87,15 +116,6 @@ function Signup() {
             name="id_empleado"
             id="id_empleado"
             placeholder="12345"
-          />
-          <label className="label-login" for="password">
-            Ingresa tu correo contraseña
-          </label>
-          <input
-            className="max-btn"
-            type="password"
-            name="password"
-            id="password"
           />
           <CustomLink to="/home">
             <button className="max-btn">Registrarse</button>
