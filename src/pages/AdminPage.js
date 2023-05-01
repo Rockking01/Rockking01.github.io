@@ -5,7 +5,7 @@ import Spinner from "../components/Spinner";
 import Button from "../components/Button";
 import "./admin_styles.css";
 
-function Admin_Page() {
+function AdminPage() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -78,4 +78,4 @@ function Admin_Page() {
   );
 }
 
-export default Admin_Page;
+export default AdminPage;

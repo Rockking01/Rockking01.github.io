@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
-
 import LoginView from "./pages/Login2";
 import Landing from "./Landing";
 import Home from "./pages/Home";
-import Admin_Page from "./pages/Admin_Page";
-import Profile_View from "./pages/Profile_View";
+import AdminPage from "./pages/AdminPage";
+import ProfileView from "./pages/ProfileView";
+import ChartData from "./pages/ChartData";
+
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
         <Route path="/login" element={<LoginView />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/admin_page" element={<Admin_Page />} />
-        <Route path="/profile/:id" element={<Profile_View />} />
+        <Route path="/chart_data" element={<ChartData />} />
+        <Route path="/admin_page" element={<AdminPage />} />
+        <Route path="/profile/:id" element={<ProfileView />} />
         <Route
           path="/"
           element={

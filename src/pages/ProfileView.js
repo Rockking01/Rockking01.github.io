@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import API from "../utils/API";
-import Table from "../components/Table";
 import Spinner from "../components/Spinner";
+import UserList from "../components/UserList";
 
-function Profile_View() {
+function ProfileView() {
   const { id } = useParams();
   const [data, setData] = useState({});
   const [error, setError] = useState(null);
@@ -25,44 +25,27 @@ function Profile_View() {
     );
   }, [id]);
 
-  const handleRowClick = (id) => {
-    console.log(`Clicked row with id ${id}`);
-  };
-  const headers = [
-    "Id",
-    "first_name",
-    "last_name",
-    "total_score",
-    "average_score",
-  ];
-
   return (
-    <>
-      <h1>Profile View</h1>
-
+    <div>
       {isLoading ? (
         <Spinner />
       ) : (
-        <>
+        <div>
           {error ? (
             <p>{error}</p>
           ) : (
-            <>
+            <div className="">
               {Object.keys(data).length > 0 ? (
-                <Table
-                  headers={headers}
-                  onRowClick={handleRowClick}
-                  data={[data]}
-                />
+                <UserList userData={data} />
               ) : (
                 <p>No hay datos que mostrar</p>
               )}
-            </>
+            </div>
           )}
-        </>
+        </div>
       )}
-    </>
+    </div>
   );
 }
 
-export default Profile_View;
+export default ProfileView;

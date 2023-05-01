@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../pages/login.css'
 
 function Input(props) {
   const [value, setValue] = useState(props.value || "");
@@ -16,12 +17,13 @@ function Input(props) {
       <div className="col">
         <label className="label-login"> {props.label}</label>
       </div>
-
       <div className="col">
         <input
+
           className="max-btn"
           type={props.type || "text"}
           placeholder={props.placeholder || ""}
+
           onChange={(e) => {
             setValue(e.target.value);
           }}
