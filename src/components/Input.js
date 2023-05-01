@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../pages/login.css'
 
 function Input(props) {
   const [value, setValue] = useState(props.value || "");
@@ -16,10 +17,8 @@ function Input(props) {
       <div className="col">
         <label className={props.labelClassName}> {props.label}</label>
       </div>
-
       <div className="col">
         <input
-          className="form-control"
           onChange={(e) => {
             setValue(e.target.value);
           }}
