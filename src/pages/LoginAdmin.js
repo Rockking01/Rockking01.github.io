@@ -17,7 +17,7 @@ function CustomLink({ to, children, ...props }) {
   );
 }
 
-function Login_Admin() {
+function LoginAdmin() {
   const [msg, setMsg] = useState("");
   const [data, setData] = useState({});
 
@@ -82,4 +82,4 @@ function Login_Admin() {
     </div>
   );
 }
-export default Login_Admin;
+export default LoginAdmin;

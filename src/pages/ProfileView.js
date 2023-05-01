@@ -4,7 +4,7 @@ import API from "../utils/API";
 import Spinner from "../components/Spinner";
 import UserList from "../components/UserList";
 
-function Profile_View() {
+function ProfileView() {
   const { id } = useParams();
   const [data, setData] = useState({});
   const [error, setError] = useState(null);
@@ -48,4 +48,4 @@ function Profile_View() {
   );
 }
 
-export default Profile_View;
+export default ProfileView;
