@@ -18,7 +18,7 @@ const Table = ({ headers, data, onRowClick }) => {
             {headers.map((header) => (
               <td key={`${index}-${header}`}>
                 {header.toLowerCase() === "id" ? (
-                  <Link to={`/profile_view/${row.id}`}>
+                  <Link to={`/profile_view/${row.id}/`}>
                     {row[header.toLowerCase()]}
                   </Link>
                 ) : (
