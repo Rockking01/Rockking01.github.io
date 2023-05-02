@@ -60,7 +60,7 @@ class API2 {
       });
   }
 
-  static update(route, data, onSuccess, onError) {
+  static update(route, onSuccess, onError, data) {
     API2.setAuthorizationHeader();
 
     const url = `${API2.baseUrl}/${route}`;
