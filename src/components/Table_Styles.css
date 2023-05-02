@@ -1,9 +1,9 @@
 .table tr:nth-child(even) {
-  background-color: #8a8a8a;
+  background-color: #444648;
 }
 
 .table tr:nth-child(odd) {
-  background-color: #8E936D;
+  background-color: #929292;
 }
 
 .table td, 

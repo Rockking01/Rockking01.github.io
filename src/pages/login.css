@@ -8,7 +8,7 @@ html {
 body {
     font-family: 'Nunito', sans-serif;
     font-size: 1.6rem;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 /* * {
@@ -29,17 +29,20 @@ h1, h2, h3 {
     grid-template-columns: 50% 50%;
     width: 120rem;
     margin: 20rem auto;
+    overflow: scroll;
 }
 
 .login-section {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
+    overflow: scroll;
 }
 
 .max-btn {

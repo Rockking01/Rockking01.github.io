@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import API2 from '../utils/API2'
+import '../pages/admin_styles.css'
 
-function ChartData() {
+function DetailData() {
   const [id, setPlayerId] = useState("");
   const [sessiones, setSessiones] = useState([]);
 
@@ -23,22 +24,22 @@ function ChartData() {
 
   return (
     <div>
-      <h1>Get User Sessions</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Player ID:
+          ID Usuario:
           <input
             type="number"
+            className="btn-margin-l"
             value={id}
             onChange={(event) => setPlayerId(event.target.value)}
           />
         </label>
-        <button type="submit">Get Sessions</button>
+        <button className="btn-margin-l" type="submit">Get Sessions</button>
       </form>
-      <ul>
-        {sessiones.map((session) => (
-          <li key={session.id}>
-            Modulo: {session.moduloJuego}, Nivel: {session.nivel}, Score: {session.score}, Velocidad: {session.velocidad}, Errores: {session.errores}, Tiempo de sesión: {session.tiempoSesion}
+      <ul className="pad-l">
+        {sessiones.map((session, index) => (
+          <li className="flex-start" key={session.id}>
+            Juego: {index + 1}, Modulo: {session.moduloJuego}, Nivel: {session.nivel}, Score: {session.score}, Velocidad: {session.velocidad}, Errores: {session.errores}, Tiempo de sesión: {session.tiempoSesion}
           </li>
         ))}
       </ul>
@@ -46,4 +47,4 @@ function ChartData() {
   );
 }
 
-export default ChartData;
+export default DetailData;

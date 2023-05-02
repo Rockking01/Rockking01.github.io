@@ -4,6 +4,9 @@ import Table from "../components/Table";
 import Spinner from "../components/Spinner";
 import Button from "../components/Button";
 import "./admin_styles.css";
+import IdChart from "../components/IdChart";
+import DetailData from "../components/DetailData";
+import NavbarAdmin from "../components/NavbarAdmin";
 
 function AdminPage() {
   const [data, setData] = useState([]);
@@ -30,8 +33,7 @@ function AdminPage() {
     "First_Name",
     "Last_Name",
     "Total_Score",
-    "Average_Score",
-    "Actions",
+    "Average_Score"
   ];
 
   const handleRowClick = (id) => {
@@ -40,21 +42,20 @@ function AdminPage() {
 
   return (
     <>
-      <h1>Admin Page</h1>
-
       {isLoading ? (
         <Spinner />
       ) : (
-        <>
+        <div>
+          <NavbarAdmin />
           {error ? (
             <p>{error}</p>
           ) : (
             <div className="grid-admin">
               <div className="profile">
-                <p>profile</p>
+                <DetailData />
               </div>
               <div className="chart">
-                <p>chart</p>
+                <IdChart />
               </div>
               <div className="table">
                 {data.length > 0 ? (
@@ -67,12 +68,12 @@ function AdminPage() {
                   <p>Presiona el boton para mostrar los datos</p>
                 )}
                 <div className="center-btn">
-                  <Button onClick={fetchData}>Load data</Button>
+                  <Button onClick={fetchData}>Cargar Información</Button>
                 </div>
               </div>
             </div>
           )}
-        </>
+        </div>
       )}
     </>
   );
