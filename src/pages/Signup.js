@@ -50,15 +50,15 @@ function SignUpView() {
   };
 
   const onSuccessAuth = (response) => {
-    API2.get("users/current_user/", onSuccessGetCurrentUser, onError);
+    API2.post("users/createNewUser/", onSuccessCreateUser, onError, data);
   };
 
-  const onSuccessGetCurrentUser = (response) => {
-    if (response.role) {
-      window.location.href = "/admin_page";
-    } else {
-      window.location.href = "/profile/" + response.id;
-    }
+  const onSuccessCreateUser = () => {
+    API2.update("token/updateToken/", onSuccessUpdateToken, onError, auth);
+  };
+
+  const onSuccessUpdateToken = () => {
+    window.location.href = "/login";
   };
 
   const onError = (response) => {
@@ -67,10 +67,11 @@ function SignUpView() {
   };
 
   const onSubmit = () => {
+    console.log(auth);
     console.log(data);
-    setMsg("");
+    setMsg("enviando datos...");
 
-    API2.post("token/", onSuccessAuth, onError, auth);
+    API2.post("token/authenticateToken/", onSuccessAuth, onError, auth);
   };
 
   return (
@@ -119,7 +120,7 @@ function SignUpView() {
             label="Ingresa tu fecha de nacimiento"
           />
           <Input
-            name="authKey"
+            name="token"
             onChangeValue={onChangeValueAuth}
             type="number"
             placeholder="12345"
