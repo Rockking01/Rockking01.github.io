@@ -54,3 +54,20 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
 }
+
+.btn-margin-l {
+  margin-left: 2rem;
+}
+
+.right {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.pad-l {
+  padding-left: 0;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}

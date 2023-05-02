@@ -8,7 +8,7 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 1.6rem;
-  overflow: hidden;
+  overflow: auto;
 }
 /* * {
   border: 1px solid red;
@@ -19,21 +19,23 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 2fr 1fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: .2rem;
+  grid-row-gap: .2rem;
   padding: 0rem;
 }
 
-li:nth-child(1) {
-  grid-row: 1 / 2;
-  grid-column: 1 / 6;
-}
-
-li:nth-child(even) {
+.even {
   grid-row: 2 / 3;
+  background-color: #444648;
+  font-size: 2rem;
 }
 
-li {
+.odd {
+  background-color: #2c2e30;
+  font-size: 2rem;
+}
+
+.even, .odd {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,10 +50,20 @@ span {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .err-img {
   max-height: 20rem;
+  grid-row: 1 / 2;
+  grid-column: 1 / 6;
+  background-color: #1D1F21;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
   
 .img-profile {
