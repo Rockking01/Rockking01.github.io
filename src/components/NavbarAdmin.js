@@ -42,6 +42,16 @@ const NavbarAdmin = () => {
             </li>
             <li>
               <CustomLink to="/admin_page">
+                <p>Dashboard</p>
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/token_email">
+                <p>Tokens</p>
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/admin_page">
                 <p>Videojuego</p>
               </CustomLink>
             </li>

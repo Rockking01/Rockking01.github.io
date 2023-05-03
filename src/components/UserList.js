@@ -1,11 +1,9 @@
 import './UserList.css'
 import profile from '../assets/profile.png'
-import NavbarAdmin from './NavbarAdmin';
 
 function UserList({ userData }) {
   return (
     <div>
-      <NavbarAdmin />
       <div className="container">
         <ul className='user-list'>
           <li className='err-img'>
