@@ -91,13 +91,13 @@ function IdChart() {
         <label>
           ID Usuario:
           <input
-            className="btn-margin-l"
+            className="btn-margin-l wid-20"
             type="number"
             value={id}
             onChange={(event) => setPlayerId(event.target.value)}
           />
         </label>
-        <button className="btn-margin-l" type="submit">Cargar Información</button>
+        <button className="btn-margin-l" type="submit">Cargar Sesiones</button>
       </form>
       <div>
         <Line options={options} data={data} />

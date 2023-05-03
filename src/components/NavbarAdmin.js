@@ -36,7 +36,7 @@ const NavbarAdmin = () => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>
-              <CustomLink to="/landing">
+              <CustomLink to="/">
                 <p>Inicio</p>
               </CustomLink>
             </li>

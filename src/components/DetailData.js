@@ -29,12 +29,12 @@ function DetailData() {
           ID Usuario:
           <input
             type="number"
-            className="btn-margin-l"
+            className="btn-margin-l wid-20"
             value={id}
             onChange={(event) => setPlayerId(event.target.value)}
           />
         </label>
-        <button className="btn-margin-l" type="submit">Get Sessions</button>
+        <button className="btn-margin-l" type="submit">Cargar Sesiones</button>
       </form>
       <ul className="pad-l">
         {sessiones.map((session, index) => (
