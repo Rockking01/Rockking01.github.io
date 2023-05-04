@@ -8,6 +8,7 @@ class API2 {
     const token = localStorage.getItem("token");
     if (token) {
       API2.headers["Authorization"] = `Token ${token}`;
+      console.log({token})
     } else {
       delete API2.headers["Authorization"];
     }
