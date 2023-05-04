@@ -1,11 +1,20 @@
 import { Navigate } from "react-router-dom";
 
-const Protected = ({ children }) => {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    return <Navigate to="/" replace />;
+function Protected({ children, admin, ...props }) {
+  const isAdmin = localStorage.getItem("isAdmin");
+
+  //console.log("admin:", admin);
+  //console.log("isAdmin:", isAdmin);
+
+  if (localStorage.getItem("token")) {
+    if (admin && isAdmin === "false") {
+      return <Navigate to="/" />;
+    } else {
+      return children;
+    }
+  } else {
+    return <Navigate to="/" />;
   }
-  return children;
-};
+}
 
 export default Protected;

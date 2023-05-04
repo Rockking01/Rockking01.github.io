@@ -10,29 +10,38 @@ import Protected from './components/Protected';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
-    // Comprueba si existe un token en localStorage
     const token = localStorage.getItem("token");
-
-    // Si hay un token, establece isLoggedIn en true
     if (token) {
       setIsLoggedIn(true);
     }
   }, []);
 
-  const handleLogin = (token) => {
-    // Almacenar token en localStorage
+  useEffect(() => {
+    const admin = localStorage.getItem("isAdmin");
+    if (admin) {
+      setIsAdmin(true);
+    }
+  }, []);
+
+  const handleLogin = (token, isAdmin) => {
     localStorage.setItem("token", token);
-    // Establecer el estado isLoggedIn en true
     setIsLoggedIn(true);
+    handleAdmin(isAdmin);
   };
 
   const handleLogout = () => {
-    // Eliminar token de localStorage
     localStorage.removeItem("token");
-    // Establecer el estado isLoggedIn en false
+    localStorage.removeItem("isAdmin");
     setIsLoggedIn(false);
+    setIsAdmin(false);
+    
+  };
+
+  const handleAdmin = (response) => {
+    localStorage.setItem('isAdmin', response.role);
   };
 
   return (
@@ -45,8 +54,8 @@ function App() {
         </Protected>
       } />
       <Route path="/admin_page" element={
-        <Protected isLoggedIn={isLoggedIn}>
-          <AdminPage onLogout={handleLogout} />
+        <Protected admin isLoggedIn={isLoggedIn} isAdmin={isAdmin}>
+          <AdminPage onLogout={handleLogout}/>
         </Protected>
       } />
       <Route path="/profile/:id" element={
@@ -67,4 +76,3 @@ function App() {
 }
 
 export default App;
-
