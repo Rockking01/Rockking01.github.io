@@ -36,8 +36,18 @@ const NavbarAdmin = () => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>
-              <CustomLink to="/landing">
+              <CustomLink to="/">
                 <p>Inicio</p>
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/admin_page">
+                <p>Dashboard</p>
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/token_email">
+                <p>Tokens</p>
               </CustomLink>
             </li>
             <li>
