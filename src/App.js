@@ -7,6 +7,8 @@ import ProfileView from "./pages/ProfileView";
 import TokenEmail from "./pages/TokenEmail";
 import { useState, useEffect } from "react";
 import Protected from './components/Protected';
+import NavbarAdmin from "./components/NavbarAdmin";
+import Videogame from "./pages/Videogame";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -37,7 +39,6 @@ function App() {
     localStorage.removeItem("isAdmin");
     setIsLoggedIn(false);
     setIsAdmin(false);
-    
   };
 
   const handleAdmin = (response) => {
@@ -49,18 +50,27 @@ function App() {
       <Route path="/login" element={<LoginView onLogin={handleLogin} />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/token_email" element={
-        <Protected isLoggedIn={isLoggedIn}>
+        <Protected admin isLoggedIn={isLoggedIn} isAdmin={isAdmin}>
+          <NavbarAdmin onLogout={handleLogout} />
           <TokenEmail onLogout={handleLogout} />
         </Protected>
       } />
       <Route path="/admin_page" element={
         <Protected admin isLoggedIn={isLoggedIn} isAdmin={isAdmin}>
-          <AdminPage onLogout={handleLogout}/>
+          <NavbarAdmin onLogout={handleLogout} />
+          <AdminPage onLogout={handleLogout} />
         </Protected>
       } />
       <Route path="/profile/:id" element={
         <Protected isLoggedIn={isLoggedIn}>
+          <NavbarAdmin onLogout={handleLogout} />
           <ProfileView onLogout={handleLogout} />
+        </Protected>
+      } />
+      <Route path="/videogame" element={
+        <Protected isLoggedIn={isLoggedIn}>
+          <NavbarAdmin onLogout={handleLogout} />
+          <Videogame onLogout={handleLogout} />
         </Protected>
       } />
       <Route

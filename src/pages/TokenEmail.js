@@ -60,7 +60,6 @@ function TokenEmail() {
 
   return (
     <div>
-      <NavbarAdmin />
       <div className='container-email'>
         <div className='flex-email'>
           <div className='token'>
