@@ -29,27 +29,45 @@ h1, h2, h3 {
     grid-template-columns: 50% 50%;
     width: 120rem;
     margin: 20rem auto;
-    overflow: scroll;
+}
+
+.signup-section-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 120rem;
+    margin: 5rem auto;
+}
+
+.max-btn-40 {
+    width: 40rem;
 }
 
 .login-section {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
-    overflow: scroll;
 }
 
 .max-btn {
-    width: 40rem;
+    width: 100%;
     padding: 1rem 3rem;
     border-radius: 1rem;
     border: none;
+}
+
+.input-max {
+    width: 100%;
 }
 
 li {
@@ -75,15 +93,11 @@ input {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 40rem;
+        max-width: 40rem;
         margin: 10rem 2rem;
     }
     .max-btn {
-        width: 20rem;
-    }
-    .login-container {
-        justify-content: flex-start;
-        align-items: flex-start;
+        width: 30rem;
     }
     .login-section {
         margin-top: 6rem;
@@ -91,8 +105,20 @@ input {
     .login-form {
         margin-top: 1rem;
     }
-    h1 {
+    .signup-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .text-left {
         text-align: left;
+    }
+    .signup-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 40rem;
     }
 }
 

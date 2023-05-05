@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import API2 from '../utils/API2'
-import '../pages/admin_styles.css'
+import API2 from '../utils/API2';
+import '../pages/admin_styles.css';
+import './Table_Styles.css'
 
 function DetailData() {
   const [id, setPlayerId] = useState("");
@@ -23,7 +24,7 @@ function DetailData() {
   };
 
   return (
-    <div>
+    <div className="grid-max">
       <form onSubmit={handleSubmit}>
         <label>
           ID Usuario:
@@ -36,13 +37,34 @@ function DetailData() {
         </label>
         <button className="btn-margin-l" type="submit">Cargar Sesiones</button>
       </form>
-      <ul className="pad-l">
-        {sessiones.map((session, index) => (
-          <li className="flex-start" key={session.id}>
-            Juego: {index + 1}, Modulo: {session.moduloJuego}, Nivel: {session.nivel}, Score: {session.score}, Velocidad: {session.velocidad}, Errores: {session.errores}, Tiempo de sesión: {session.tiempoSesion}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Juego</th>
+              <th>Modulo</th>
+              <th>Nivel</th>
+              <th>Score</th>
+              <th>Velocidad</th>
+              <th>Errores</th>
+              <th>Tiempo de sesión</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sessiones.map((session, index) => (
+              <tr key={session.id}>
+                <td>{index + 1}</td>
+                <td>{session.moduloJuego}</td>
+                <td>{session.nivel}</td>
+                <td>{session.score}</td>
+                <td>{session.velocidad}</td>
+                <td>{session.errores}</td>
+                <td>{session.tiempoSesion}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

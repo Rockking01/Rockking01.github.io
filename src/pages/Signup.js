@@ -75,17 +75,16 @@ function SignUpView() {
   };
 
   return (
-    <div className="login-container">
-      <div className="signup-section">
+    <div className="signup-container">
+      <div className="signup-section-page">
         <h2>Bienvenido</h2>
         <p className="text">Si ya estas registrado inicia sesion</p>
         <CustomLink to="/login">
-          <button className="max-btn">Iniciar Sesion</button>
+          <button className="max-btn-40">Iniciar Sesion</button>
         </CustomLink>
       </div>
-
       <div className="login-section">
-        <h1>Registrarse</h1>
+        <h1 className="text-left">Registrarse</h1>
         <div className="login-form">
           <Input
             name="first_name"
@@ -95,7 +94,7 @@ function SignUpView() {
           />
           <Input
             name="last_name"
-            placeholder="perez"
+            placeholder="Perez"
             onChangeValue={onChangeValue}
             label="Ingresa tus apellidos"
           />

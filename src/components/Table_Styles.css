@@ -2,6 +2,10 @@
   background-color: #444648;
 }
 
+table {
+  table-layout: fixed;
+}
+
 .table tr:nth-child(odd) {
   background-color: #929292;
 }
@@ -27,5 +31,9 @@
 .table {
   width: 100%;
   overflow: auto;
-  height: 45vh;
+}
+
+.grid-max {
+  max-height: 57vh;
+  overflow-y: auto;
 }

@@ -58,7 +58,7 @@ function LoginView() {
         <h2>Bienvenido</h2>
         <p className="text">Si aun no tienes una cuenta registrate</p>
         <CustomLink to="/signup">
-          <button className="max-btn">Registrarse</button>
+          <button className="max-btn-40">Registrarse</button>
         </CustomLink>
       </div>
       <div className="login-section">
@@ -79,7 +79,7 @@ function LoginView() {
           />
 
           <Button onClick={onSubmit} type="primary">
-            Login
+            Iniciar Sesion
           </Button>
           <p>{msg}</p>
         </div>

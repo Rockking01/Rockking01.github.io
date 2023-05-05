@@ -10,10 +10,10 @@ function Landing() {
             <p>Inicia sesion o registrate para continuar</p>
             <div className='buttons'>
                 <CustomLink to='/login'>
-                    <button>Iniciar Sesion</button>
+                    <button className="max-btn">Iniciar Sesion</button>
                 </CustomLink>
                 <CustomLink to='/signup'>
-                    <button>Registrarse</button>
+                    <button className="max-btn">Registrarse</button>
                 </CustomLink>
             </div>
         </div>
