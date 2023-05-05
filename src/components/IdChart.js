@@ -82,6 +82,13 @@ function IdChart() {
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         tension: 0.4,
       },
+      {
+        label: "Velocidad",
+        data: sessiones.map((session) => session.velocidad),
+        borderColor: "rgb(51, 91, 255)",
+        backgroundColor: 'rgb(51, 91, 255)',
+        tension: 0.4,
+      },
     ]
   };
 
