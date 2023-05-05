@@ -3,7 +3,7 @@
 function Videogame() {
   return(
     <>
-      <p>h111</p>
+    
     </>
   )
 }

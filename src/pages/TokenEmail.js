@@ -73,7 +73,15 @@ function TokenEmail() {
                 value={authKey}
                 onChangeValue={handleInputChange}
               />
-              <button className='btn-margin-btm' type="submit">Generar Token</button>
+              <Input
+                name="status"
+                label="Status:"
+                type="text"
+                placeholder="Ingrese el Status"
+                value='active'
+                onChangeValue={handleInputChange}
+              />
+              <button className='btn-margin-btm max-btn' type="submit">Generar Token</button>
             </form>
             {showMessage && (
               <div className='flex-inline'>
@@ -95,7 +103,7 @@ function TokenEmail() {
                 <input type='number' className='max-btn' placeholder='token' value={authKey} name='token' />
               </div>
               <div>
-                <button className='btn-margin-btm' type="submit">Enviar Correo</button>
+                <button className='btn-margin-btm max-btn' type="submit">Enviar Correo</button>
               </div>
             </div>
           </form>

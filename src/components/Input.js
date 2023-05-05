@@ -19,7 +19,7 @@ function Input(props) {
       </div>
       <div className="col">
         <input
-          className="max-btn"
+          className="max-btn input-max"
           type={props.type || "text"}
           placeholder={props.placeholder || ""}
           onChange={(e) => {

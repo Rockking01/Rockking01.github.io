@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import API from "../utils/API";
 import Table from "../components/Table";
 import Spinner from "../components/Spinner";
-import Button from "../components/Button";
 import "./admin_styles.css";
 import IdChart from "../components/IdChart";
+import './admin_styles.css'
 import DetailData from "../components/DetailData";
 
 function AdminPage() {
@@ -66,7 +66,7 @@ function AdminPage() {
                   <p>Presiona el boton para mostrar los datos</p>
                 )}
                 <div className="center-btn">
-                  <Button onClick={fetchData}>Cargar Información</Button>
+                  <button onClick={fetchData}>Cargar Información</button>
                 </div>
               </div>
             </div>
