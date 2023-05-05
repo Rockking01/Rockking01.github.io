@@ -51,6 +51,11 @@ const NavbarAdmin = ({ onLogout }) => {
               </CustomLink>
             </li>
             <li>
+              <CustomLink to="/description">
+                <p>Descripcion</p>
+              </CustomLink>
+            </li>
+            <li>
               <CustomLink to="/token_email" isAdminLink={true}>
                 <p>Tokens</p>
               </CustomLink>

@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import Protected from './components/Protected';
 import NavbarAdmin from "./components/NavbarAdmin";
 import Videogame from "./pages/Videogame";
+import Description from "./pages/Description";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -71,6 +72,12 @@ function App() {
         <Protected isLoggedIn={isLoggedIn}>
           <NavbarAdmin onLogout={handleLogout} />
           <Videogame onLogout={handleLogout} />
+        </Protected>
+      } />
+      <Route path="/description" element={
+        <Protected isLoggedIn={isLoggedIn}>
+          <NavbarAdmin onLogout={handleLogout} />
+          <Description onLogout={handleLogout} />
         </Protected>
       } />
       <Route
