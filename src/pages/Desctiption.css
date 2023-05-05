@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1REM = 10px */
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+/* * {
+  border: 1px solid red;
+} */
+
+/* Globales */
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.container-description {
+  width: 80rem;
+  margin: 0 auto;
+}
+
+.p-description {
+  width: 100%;
+  text-align: justify;
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+
+.logo-description {
+  width: 20%;
+  height: 10%;
+  margin: 3rem 0;
+}

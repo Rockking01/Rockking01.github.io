@@ -47,7 +47,6 @@ function DetailData() {
               <th>Score</th>
               <th>Velocidad</th>
               <th>Errores</th>
-              <th>Tiempo de sesión</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +58,6 @@ function DetailData() {
                 <td>{session.score}</td>
                 <td>{session.velocidad}</td>
                 <td>{session.errores}</td>
-                <td>{session.tiempoSesion}</td>
               </tr>
             ))}
           </tbody>

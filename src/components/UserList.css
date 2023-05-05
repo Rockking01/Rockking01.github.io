@@ -50,7 +50,7 @@ span {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
 }
@@ -69,4 +69,17 @@ span {
 .img-profile {
   height: 100%;
   border-radius: 1rem;
+}
+
+.text-user {
+  text-align: justify;
+  max-width: 100rem;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 600px) {
+  .text-user {
+    font-size: 1.6rem;
+    margin: 0 5rem;
+  }
 }
