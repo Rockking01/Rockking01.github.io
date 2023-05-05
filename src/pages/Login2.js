@@ -31,7 +31,9 @@ function LoginView() {
   };
 
   const onSuccessGetCurrentUser = (response) => {
+    localStorage.setItem('isAdmin', response.role)
     if (response.role) {
+      // console.log(response.role)
       window.location.href = "/admin_page";
     } else {
       window.location.href = "/profile/" + response.id;

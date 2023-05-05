@@ -6,7 +6,6 @@ import Button from "../components/Button";
 import "./admin_styles.css";
 import IdChart from "../components/IdChart";
 import DetailData from "../components/DetailData";
-import NavbarAdmin from "../components/NavbarAdmin";
 
 function AdminPage() {
   const [data, setData] = useState([]);
@@ -46,7 +45,6 @@ function AdminPage() {
         <Spinner />
       ) : (
         <div>
-          <NavbarAdmin />
           {error ? (
             <p>{error}</p>
           ) : (

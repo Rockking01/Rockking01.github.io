@@ -7,32 +7,42 @@ import ProfileView from "./pages/ProfileView";
 import TokenEmail from "./pages/TokenEmail";
 import { useState, useEffect } from "react";
 import Protected from './components/Protected';
+import NavbarAdmin from "./components/NavbarAdmin";
+import Videogame from "./pages/Videogame";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
-    // Comprueba si existe un token en localStorage
     const token = localStorage.getItem("token");
-
-    // Si hay un token, establece isLoggedIn en true
     if (token) {
       setIsLoggedIn(true);
     }
   }, []);
 
-  const handleLogin = (token) => {
-    // Almacenar token en localStorage
+  useEffect(() => {
+    const admin = localStorage.getItem("isAdmin");
+    if (admin) {
+      setIsAdmin(true);
+    }
+  }, []);
+
+  const handleLogin = (token, isAdmin) => {
     localStorage.setItem("token", token);
-    // Establecer el estado isLoggedIn en true
     setIsLoggedIn(true);
+    handleAdmin(isAdmin);
   };
 
   const handleLogout = () => {
-    // Eliminar token de localStorage
     localStorage.removeItem("token");
-    // Establecer el estado isLoggedIn en false
+    localStorage.removeItem("isAdmin");
     setIsLoggedIn(false);
+    setIsAdmin(false);
+  };
+
+  const handleAdmin = (response) => {
+    localStorage.setItem('isAdmin', response.role);
   };
 
   return (
@@ -40,18 +50,27 @@ function App() {
       <Route path="/login" element={<LoginView onLogin={handleLogin} />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/token_email" element={
-        <Protected isLoggedIn={isLoggedIn}>
+        <Protected admin isLoggedIn={isLoggedIn} isAdmin={isAdmin}>
+          <NavbarAdmin onLogout={handleLogout} />
           <TokenEmail onLogout={handleLogout} />
         </Protected>
       } />
       <Route path="/admin_page" element={
-        <Protected isLoggedIn={isLoggedIn}>
+        <Protected admin isLoggedIn={isLoggedIn} isAdmin={isAdmin}>
+          <NavbarAdmin onLogout={handleLogout} />
           <AdminPage onLogout={handleLogout} />
         </Protected>
       } />
       <Route path="/profile/:id" element={
         <Protected isLoggedIn={isLoggedIn}>
+          <NavbarAdmin onLogout={handleLogout} />
           <ProfileView onLogout={handleLogout} />
+        </Protected>
+      } />
+      <Route path="/videogame" element={
+        <Protected isLoggedIn={isLoggedIn}>
+          <NavbarAdmin onLogout={handleLogout} />
+          <Videogame onLogout={handleLogout} />
         </Protected>
       } />
       <Route
@@ -67,4 +86,3 @@ function App() {
 }
 
 export default App;
-

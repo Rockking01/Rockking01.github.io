@@ -3,9 +3,15 @@ import './Navbar.css'
 import logo from '../assets/logo.png'
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
-function CustomLink({ to, children, ...props }) {
+function CustomLink({ to, children, isAdminLink = false, ...props }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+
+  // Si el enlace es para la página de AdminPage y el usuario actual no es admin, no renderizamos el enlace
+  if (isAdminLink && !localStorage.getItem('isAdmin')) {
+    return null;
+  }
+
   return (
     <li className={isActive ? "active" : ""}>
       <Link to={to} {...props}>
@@ -15,12 +21,16 @@ function CustomLink({ to, children, ...props }) {
   );
 }
 
-const NavbarAdmin = () => {
+const NavbarAdmin = ({ onLogout }) => {
   const [showNavbar, setShowNavbar] = useState(false)
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
   }
+
+  const handleLogout = () => {
+    onLogout();
+  };
 
   return (
     <nav className="navbar">
@@ -36,8 +46,13 @@ const NavbarAdmin = () => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>
-              <CustomLink to="/">
-                <p>Inicio</p>
+              <CustomLink to="/videogame">
+                <p>Videojuego</p>
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/token_email" isAdminLink={true}>
+                <p>Tokens</p>
               </CustomLink>
             </li>
             <li>
@@ -46,19 +61,7 @@ const NavbarAdmin = () => {
               </CustomLink>
             </li>
             <li>
-              <CustomLink to="/token_email">
-                <p>Tokens</p>
-              </CustomLink>
-            </li>
-            <li>
-              <CustomLink to="/admin_page">
-                <p>Videojuego</p>
-              </CustomLink>
-            </li>
-            <li>
-              <CustomLink to="/admin_page">
-                <p>Cerrar Sesion</p>
-              </CustomLink>
+              <p className='p-bld' onClick={handleLogout}>Cerrar sesión</p>
             </li>
           </ul>
         </div>
