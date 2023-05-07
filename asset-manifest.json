@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/regal_rexnord_webapp/static/css/main.cb285e1f.css",
+    "main.js": "/regal_rexnord_webapp/static/js/main.f1a6ff2f.js",
+    "static/media/logo.png": "/regal_rexnord_webapp/static/media/logo.ff7712d4db79ae4b0136.png",
+    "static/media/profile.png": "/regal_rexnord_webapp/static/media/profile.c3f945216dc12c9498dc.png",
+    "index.html": "/regal_rexnord_webapp/index.html",
+    "main.cb285e1f.css.map": "/regal_rexnord_webapp/static/css/main.cb285e1f.css.map",
+    "main.f1a6ff2f.js.map": "/regal_rexnord_webapp/static/js/main.f1a6ff2f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb285e1f.css",
+    "static/js/main.f1a6ff2f.js"
+  ]
+}
