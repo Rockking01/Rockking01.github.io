@@ -1,5 +1,5 @@
 class API2 {
-  static baseUrl = "http://127.0.0.1:8000/api";
+  static baseUrl = "http://rockking01.pythonanywhere.com/api";
   static headers = {
     "Content-Type": "application/json",
   };
@@ -8,7 +8,7 @@ class API2 {
     const token = localStorage.getItem("token");
     if (token) {
       API2.headers["Authorization"] = `Token ${token}`;
-      console.log({token})
+      console.log({ token });
     } else {
       delete API2.headers["Authorization"];
     }
