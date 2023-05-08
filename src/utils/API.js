@@ -1,6 +1,6 @@
 class API {
   static call = (route, onSuccess, onError, params) => {
-    const baseUrl = "http://rockking01.pythonanywhere.com/api";
+    const baseUrl = "https://rockking01.pythonanywhere.com/api";
 
     let headers = {
       "Content-Type": "application/json",

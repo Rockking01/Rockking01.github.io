@@ -1,5 +1,5 @@
 class API2 {
-  static baseUrl = "http://rockking01.pythonanywhere.com/api";
+  static baseUrl = "https://rockking01.pythonanywhere.com/api";
   static headers = {
     "Content-Type": "application/json",
   };
